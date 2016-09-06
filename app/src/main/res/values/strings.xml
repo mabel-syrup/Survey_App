@@ -5,4 +5,5 @@
     <string name="disagree">No</string>
     <string name="neutral">Maybe</string>
     <string name="results">Results</string>
+    <string name="clear">Clear Results</string>
 </resources>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button noButton;
     Button neutralButton;
     Button resultsButton;
+    Button clearButton;
     TextView question;
 
     //Use an integer arraylist to store:
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         noButton = (Button) findViewById(R.id.disagreeButton);
         neutralButton = (Button) findViewById(R.id.neutralButton);
         resultsButton = (Button) findViewById(R.id.resultsButton);
+        clearButton = (Button) findViewById(R.id.clearButton);
         question = (TextView) findViewById(R.id.questionText);
 
         yesButton.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +86,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Clearing results...",Toast.LENGTH_SHORT).show();
+                results.clear();
+            }
+        });
+
 
     }
 
