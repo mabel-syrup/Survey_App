@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Survey App</string>
+    <string name="question">Is this a good app?</string>
+    <string name="agree">Yes</string>
+    <string name="disagree">No</string>
+    <string name="neutral">Maybe</string>
+</resources>
