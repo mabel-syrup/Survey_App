@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button neutralButton;
     Button resultsButton;
     Button clearButton;
+    Button settingsButton;
     TextView question;
 
     //Use an integer arraylist to store:
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> results;
 
     private final static String SURVEY_KEY = "survey app key";
+    private final static int SURVEY_SETTINGS_RESULT_CODE = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         resultsButton = (Button) findViewById(R.id.resultsButton);
         clearButton = (Button) findViewById(R.id.clearButton);
         question = (TextView) findViewById(R.id.questionText);
+        settingsButton = (Button) findViewById(R.id.settingsButton);
+
+        updateFields();
 
         yesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +98,37 @@ public class MainActivity extends AppCompatActivity {
                 results.clear();
             }
         });
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent settingsIntent = new Intent(MainActivity.this, ConfigActivity.class);
+                startActivityForResult(settingsIntent,SURVEY_SETTINGS_RESULT_CODE);
+            }
+        });
 
+    }
+
+    public void updateFields (){
+
+        question.setText(Memory.getQuestion());
+        yesButton.setText(Memory.getAnswerYes());
+        noButton.setText(Memory.getAnswerNo());
+        neutralButton.setText(Memory.getAnswerMaybe());
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == SURVEY_SETTINGS_RESULT_CODE && resultCode == RESULT_OK) {
+
+            updateFields();
+
+        } else {
+
+            System.out.println("SURVEY: Result was not correct!");
+
+        }
 
     }
 

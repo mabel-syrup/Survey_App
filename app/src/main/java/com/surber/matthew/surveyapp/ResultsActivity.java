@@ -56,7 +56,7 @@ public class ResultsActivity extends AppCompatActivity {
         catch(NullPointerException n){
             System.out.println("No results set.");
         }
-        return ("Yes: " + yesCount + "\nMaybe: " + neutralCount + "\nNo: " + noCount);
+        return (Memory.getAnswerYes() + ": " + yesCount + "\n" + Memory.getAnswerMaybe() + ": " + neutralCount + "\n" + Memory.getAnswerNo() + ": " + noCount);
 
     }
 }

@@ -6,4 +6,6 @@
     <string name="neutral">Maybe</string>
     <string name="results">Results</string>
     <string name="clear">Clear Results</string>
+    <string name="ok_button">Accept</string>
+    <string name="Settings">...</string>
 </resources>

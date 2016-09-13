@@ -34,28 +34,27 @@
         android:text="@string/agree"
         android:id="@+id/agreeButton"
         android:textSize="@dimen/textSize"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="130dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="25dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/neutral"
         android:id="@+id/neutralButton"
-        android:layout_alignTop="@+id/agreeButton"
+        android:layout_below="@+id/agreeButton"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/textSize" />
+        android:textSize="@dimen/textSize"
+        android:layout_marginBottom="25dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/disagree"
         android:id="@+id/disagreeButton"
-        android:layout_alignTop="@+id/agreeButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/neutralButton"
+        android:layout_centerHorizontal="true"
         android:textSize="@dimen/textSize" />
 
     <Button
@@ -66,4 +65,13 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Settings"
+        android:id="@+id/settingsButton"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/resultsButton"
+        android:layout_toStartOf="@+id/resultsButton" />
 </RelativeLayout>
